@@ -1998,6 +1998,29 @@ body {
     color: rgba(255,255,255,0.85);
     font-size: 0.8rem;
 }
+.ads-download-btn {
+    position: absolute;
+    top: 0.8rem;
+    right: 0.8rem;
+    z-index: 5;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.ads-download-btn:hover {
+    background: var(--accent);
+    transform: scale(1.1);
+}
 .cert-lightbox {
     position: fixed;
     inset: 0;
