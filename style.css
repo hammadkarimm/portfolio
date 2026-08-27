@@ -2149,16 +2149,20 @@ body {
     }
     
     .techstack-grid {
-        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
     }
     
     .techstack-item {
-        padding: 1rem 0.8rem;
+        padding: 1rem 0.6rem;
     }
     
     .techstack-item i {
         font-size: 2rem;
+    }
+      .techstack-item span {
+        font-size: 0.8rem;
+        line-height: 1.3;
     }
 }
 
@@ -2181,7 +2185,7 @@ body {
     }
     
     .techstack-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }/* ===== MOBILE ALIGNMENT FIXES ===== */
 @media (max-width: 768px) {
