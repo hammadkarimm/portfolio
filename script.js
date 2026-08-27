@@ -259,11 +259,8 @@ const adsLightboxScroll = document.getElementById('adsLightboxScroll');
 
 adsCards.forEach(card => {
     card.addEventListener('click', () => {
-        const images = card.dataset.images.split(',');
-        adsLightboxScroll.innerHTML = images
-            .map(src => `<div class="ads-slide"><img src="${src.trim()}" alt="${card.dataset.title}" /></div>`)
-            .join('');
-        adsLightboxScroll.scrollTop = 0;
+        const pdfSrc = card.dataset.pdf;
+        adsLightboxScroll.innerHTML = `<iframe src="${pdfSrc}" class="ads-pdf-frame" title="${card.dataset.title}"></iframe>`;
         adsLightbox.classList.add('active');
     });
 });
