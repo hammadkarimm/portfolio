@@ -286,3 +286,13 @@ if (heroSlides.length > 0) {
         heroSlides[heroSlideIndex].classList.add('active');
     }, 3000);
 }
+// ===== DOWNLOAD CV =====
+const downloadCvBtn = document.getElementById('downloadCvBtn');
+downloadCvBtn.addEventListener('click', () => {
+    const link = document.createElement('a');
+    link.href = 'CV.pdf';
+    link.download = 'Hammad_Karim_CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+});
