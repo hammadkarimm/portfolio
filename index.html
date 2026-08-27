@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hammad Karim · Google Ads Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css?v=2" />
+</head>
+<body data-theme="creamy">
+    <!-- ===== GRADIENT BACKGROUND ===== -->
+    <div class="gradient-bg"></div>
+
+    <!-- ===== THEME SWITCHER ===== -->
+    <div class="theme-switcher" id="themeSwitcher">
+    <button class="theme-btn active" data-theme="creamy" title="Creamy"><span class="check">✓</span></button>
+    <button class="theme-btn" data-theme="light" title="Light"><span class="check">✓</span></button>
+    <button class="theme-btn" data-theme="dark" title="Dark"><span class="check">✓</span></button>
+    <button class="theme-btn" data-theme="blue" title="Blue"><span class="check">✓</span></button>
+    <button class="theme-btn" data-theme="gradient" title="Gradient"><span class="check">✓</span></button>
+    <button class="theme-toggle-arrow" id="themeToggleArrow" aria-label="Show theme options">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+</div>
+
+    <!-- ===== NAVBAR ===== -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo"></i> HammadKarim</div>
+            <nav class="nav-links" id="navLinks">
+                <ul>
+    <li><a href="#hero" class="nav-link active">Home</a></li>
+    <li><a href="#about" class="nav-link">About</a></li>
+    <li><a href="#services" class="nav-link">Services</a></li>
+    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+    <li><a href="#experience" class="nav-link">Experience</a></li>
+    <li><a href="#education" class="nav-link">Education</a></li>
+    <li><a href="#contact" class="nav-link">Contact</a></li>
+</ul>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== HERO ===== -->
+        <section id="hero" class="hero section-padding">
+            <div class="container hero-grid">
+                <div class="hero-content reveal-left">
+                    <div class="badge"><i class="fa-solid fa-medal"></i> Certified Google ads Specialist</div>
+                    <h1 style="line-height: 1.2;">Google Ads<br />Manager</h1>
+                    <div class="hero-role-wrapper">
+                        <span class="static-text">I'm a </span>
+                        <span class="typing-text" id="typingText"></span>
+                        <span class="cursor">|</span>
+                    </div>
+                    <p class="hero-desc">
+                        <i class="fas fa-quote-left" style="opacity:0.4;margin-right:0.3rem;"></i>
+                        I will Setup & Manage your Google Ads Campaign for E-Commerce & Lead Generation
+                        <i class="fas fa-quote-right" style="opacity:0.4;margin-left:0.3rem;"></i>
+
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#portfolio" class="btn btn-primary"><i class="fas fa-eye"></i> Portfolio</a>
+                        <a href="#contact" class="btn btn-secondary"><i class="fas fa-paper-plane"></i> Contact Me</a>
+                    </div>
+                </div>
+                <div class="hero-video-wrapper reveal-right">
+    <div class="ad-slideshow" id="heroSlideshow">
+        <img src="1.png" class="ad-slide active" alt="Featured sample" />
+        <img src="2.png" class="ad-slide" alt="Featured sample" />
+        <img src="3.png" class="ad-slide" alt="Featured sample" />
+    </div>
+    <div class="video-overlay"></div>
+    
+</div>
+            </div>
+        </section>
+
+        <!-- ===== ABOUT ===== -->
+        <section id="about" class="about section-padding">
+            <div class="container">
+                <div class="about-header reveal">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="about-tagline"><i class="fas fa-wand-magic-sparkles"></i> Google Ads Manager | E-commerce & Lead Generation <i class="fas fa-wand-magic-sparkles"></i></p>
+                </div>
+                
+                <div class="about-wrapper">
+                    <div class="about-image reveal-left">
+                        <div class="profile-image-placeholder">
+                            <img src="image.png" alt="Abdul Rafay Akhtar" />
+                        </div>
+                    </div>
+                    <div class="about-content reveal-right">
+                        <h3 class="about-name">Hello, I'm <br>Hammad Karim</h3>
+                        <p style="text-align: justify;">
+                            I’m a Google Ads Manager specializing in e-commerce, with lead-generation experience. I’ve completed Google Ads training and gained experience with real campaign structures in an agency environment. I help businesses optimize campaigns, drive measurable results, and grow through practical performance marketing.
+                        </p>
+                        
+                        <div class="about-cta">
+                            <a href="CV.pdf" download="Hammad_Karim_CV.pdf" class="btn btn-primary">
+                                <i class="fas fa-download"></i> Download CV
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </section>
+
+        
+
+        <!-- ===== SERVICES ===== -->
+<section id="services" class="services section-padding">
+    <div class="container">
+        <h2 class="section-title reveal">Services</h2>
+        <p class="services-tagline reveal">Here's how I can help grow your e-commerce or lead-gen business through Google Ads.</p>
+
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <div class="service-icon"><i class="fas fa-bullseye"></i></div>
+                <h3>Google Ads Setup and Management</h3>
+                <p >I'll build your campaigns from scratch and manage them daily to keep performance consistent and profitable.</p>
+            </div>
+
+            <div class="service-card reveal">
+                <div class="service-icon"><i class="fas fa-diagram-project"></i></div>
+                <h3>Conversion Tracking Setup</h3>
+                <p>I'll set up accurate conversion tracking so every sale and lead gets measured correctly, no guesswork.</p>
+            </div>
+
+            <div class="service-card reveal">
+                <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>Analytics and Tracking (GA4 / GTM)</h3>
+                <p>I'll configure Google Tag Manager and GA4 to give you clear, reliable data on how users behave on your site.</p>
+            </div>
+
+            <div class="service-card reveal">
+                <div class="service-icon"><i class="fas fa-store"></i></div>
+                <h3>Google Merchant Center Setup</h3>
+                <p>I'll set up and optimize your product feed so your items show up correctly and stay approved for Shopping ads.</p>
+            </div>
+
+            <div class="service-card reveal">
+                <div class="service-icon"><i class="fas fa-cart-shopping"></i></div>
+                <h3>Shopping and Performance Max Ads</h3>
+                <p>I'll build and optimize Shopping and Performance Max campaigns to drive sales across Google's full network.</p>
+            </div>
+
+            <div class="service-card reveal">
+                <div class="service-icon"><i class="fas fa-gears"></i></div>
+                <h3>Ongoing Optimization and Reporting</h3>
+                <p>I'll continuously monitor, test, and report on results so your campaigns keep improving over time.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- ===== PORTFOLIO SHOWCASE (NEW) ===== -->
+        <section id="portfolio" class="portfolio section-padding">
+            <div class="container">
+                <div class="portfolio-header reveal">
+                    <h2 class="section-title">Portfolio</h2>
+                    
+                </div>
+
+                <!-- Tab Navigation -->
+                <div class="portfolio-tabs reveal">
+                    <button class="portfolio-tab active" data-tab="projects">
+                        <i class="fas fa-chart-line"></i> Google Ads Work
+                    </button>
+                    <button class="portfolio-tab" data-tab="certificates">
+                        <i class="fas fa-certificate"></i> Certificates
+                    </button>
+                    <button class="portfolio-tab" data-tab="techstack">
+                        <i class="fas fa-layer-group"></i> Tools & Platforms
+                    </button>
+                </div>
+
+                <!-- Tab Content: Projects -->
+               <div class="portfolio-content active" id="tab-projects">
+    <div class="certificates-grid">
+        <div class="certificate-card ads-work-card" data-images="1.png,2.png,3.png" data-title="E-commerce Search Campaign">
+            <img src="1.png" alt="E-commerce Search Campaign" />
+            <div class="certificate-overlay">
+                <h4>Ecommerce Campaign Experience</h4>
+            </div>
+        </div>
+
+        <div class="certificate-card ads-work-card" data-images="4.png,5.png,6.png" data-title="Performance Max Results">
+            <img src="4.png" alt="Performance Max Results" />
+            <div class="certificate-overlay">
+                <h4>E-commerce Google Ads Campaign Approach</h4>
+            </div>
+        </div>
+
+        <div class="certificate-card ads-work-card" data-images="7.png,8.png,9.png" data-title="Shopping Campaign Setup">
+            <img src="7.png" alt="Shopping Campaign Setup" />
+            <div class="certificate-overlay">
+                <h4>Google Search Ads Practice</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+                <!-- Tab Content: Certificates (Empty - Ready for manual addition) -->
+                <div class="portfolio-content" id="tab-certificates">
+    <div class="certificates-grid">
+       <div class="certificate-card" data-img="search.png" data-title="Google Ads Certification" data-org="Google Skillshop" data-year="2026">
+            <img src="search.png" alt="Google Ads Certification" />
+            <div class="certificate-overlay">
+                <h4>Google Ads Search Certification</h4>
+                <span>Google Digital Academy (Skillshop) · 2026</span>
+            </div>
+        </div>
+        <!-- Copy the block above for each new certificate, just change data-img, data-title, data-org, data-year, and the img src/alt -->
+         <div class="certificate-card" data-img="display.png" data-title="Google Ads Certification" data-org="Google Skillshop" data-year="2026">
+            <img src="display.png" alt="Google Ads Certification" />
+            <div class="certificate-overlay">
+                <h4>Google Ads Display Certification</h4>
+                <span>Google Digital Academy (Skillshop) · 2026</span>
+            </div>
+        </div>
+         <div class="certificate-card" data-img="shopping.png" data-title="Google Ads Certification" data-org="Google Skillshop" data-year="2026">
+            <img src="shopping.png" alt="Google Ads Certification" />
+            <div class="certificate-overlay">
+                <h4>Google Ads Shopping Certification</h4>
+                <span>Google Digital Academy (Skillshop) · 2026</span>
+            </div>
+        </div>
+         <div class="certificate-card" data-img="video.png" data-title="Google Ads Certification" data-org="Google Skillshop" data-year="2026">
+            <img src="video.png" alt="Google Ads Certification" />
+            <div class="certificate-overlay">
+                <h4>Google Ads Video Certification</h4>
+                <span>Google Digital Academy (Skillshop) · 2026</span>
+            </div>
+        </div>
+    </div>
+   
+</div>
+
+                <!-- Tab Content: Tech Stack -->
+                <div class="portfolio-content" id="tab-techstack">
+    <div class="techstack-grid">
+        <div class="techstack-item"><i class="fab fa-google"></i><span>Google Ads</span></div>
+        <div class="techstack-item"><i class="fas fa-tags"></i><span>Google Tag Manager</span></div>
+        <div class="techstack-item"><i class="fas fa-store"></i><span>G Merchant Center</span></div>
+        <div class="techstack-item"><i class="fas fa-chart-line"></i><span>Google Analytics 4</span></div>
+        <div class="techstack-item"><i class="fab fa-shopify"></i><span>Shopify</span></div>
+        <div class="techstack-item"><i class="fas fa-table"></i><span>Google Sheets</span></div>
+        <div class="techstack-item"><i class="fas fa-file-lines"></i><span>Google Docs</span></div>
+        
+    </div>
+</div>
+            </div>
+        </section>
+
+        <!-- ===== EXPERIENCE ===== -->
+        <section id="experience" class="experience section-padding">
+            <div class="container">
+                <h2 class="section-title reveal">Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item reveal-left">
+                        <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+                        <div class="timeline-content">
+                            <h3>Logical Gecko</h3>
+                            <h4 class="timeline-company">Google Ads Trainee</h4>
+                            <span class="timeline-date">August 2026</span>
+                           <ul class="timeline-list">
+    <li>Gained hands-on experience working with Google Ads campaigns in an agency environment.</li>
+    <li>Worked with e-commerce campaigns across Search, Brand Search, Display, and Performance Max.</li>
+    <li>Practiced understanding campaign structure, conversions, CPC, cost, and other key performance metrics.</li>
+</ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== EDUCATION ===== -->
+        <section id="education" class="education section-padding">
+            <div class="container">
+                <h2 class="section-title reveal">Academic Background</h2>
+                
+                <div class="education-wrapper">
+                    <div class="education-card reveal-left">
+                        <div class="education-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="education-content">
+                            <h3>BS Software Engineering</h3>
+                            <p class="education-institution">Air University, Islamabad</p>
+                            <p class="education-meta">2025 – Present · 3rd Semester</p>
+                            <p class="education-location"><i class="fas fa-map-marker-alt"></i> Islamabad, Pakistan</p>
+                            <p style="text-align: justify;" class="education-description">
+                                A Software Engineering student at Air University, Islamabad, with two semesters completed. Studied OOP (C++), Computer Networks, Digital Logic Design, Discrete Structures, and Web Development, while actively working on real-world projects to strengthen practical skills.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="education-card reveal-left">
+                        <div class="education-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="education-content">
+                            <h3>Intermediate in Computer Science (ICS)</h3>
+                            <p class="education-institution">Islamabad Model College, Islamabad</p>
+                            <p class="education-meta">2023 – 2025</p>
+                            <p class="education-location"><i class="fas fa-map-marker-alt"></i> Islamabad, Pakistan</p>
+                            <p style="text-align: justify;" class="education-description">
+                                Completed Intermediate in Computer Science (ICS), developing a strong foundation in programming, mathematics, problem-solving, and core computing concepts. This background strengthened analytical thinking and prepared me to pursue higher education and build a career in software development and technology.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+              
+
+                
+            </div>
+        </section>
+
+        <!-- ===== CONTACT ===== -->
+        <section id="contact" class="contact section-padding">
+            <div class="container">
+                <div class="contact-header reveal">
+                    <h2 class="section-title">Contact Me</h2>
+                    <p class="contact-tagline" >Looking to scale your e-commerce business with Google Ads? Get in touch to discuss your goals and how I can help create, manage, and optimize campaigns for better results.</p>
+                </div>
+
+                <div class="contact-wrapper">
+                    <div class="contact-form-wrapper reveal-left">
+                        <h3 class="contact-form-title"><i class="fas fa-envelope"></i> Contact</h3>
+                        <p class="contact-form-subtitle">Want to discuss something? Send me a message and let's talk.</p>
+                        
+                        <form class="contact-form" id="contactForm" action="https://formspree.io/f/mgawjnlk" method="POST">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your Name" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" name="email" placeholder="Your Email" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send Message</button>
+                            <div class="form-feedback" id="formFeedback"></div>
+                        </form>
+                    </div>
+
+                    <div class="contact-info-wrapper reveal-right">
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="contact-info-content">
+    <h4>Email</h4>
+    <p><a href="mailto:hammadkarim07@gmail.com" style="color: inherit; text-decoration: none;">hammadkarim07@gmail.com</a></p>
+</div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="contact-info-content">
+                                <h4>Location</h4>
+                                <p>Islamabad, Pakistan</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon"><i class="fas fa-briefcase"></i></div>
+                            <div class="contact-info-content">
+                                <h4>Status</h4>
+                                <p>Open to Work!</p>
+                            </div>
+                        </div>
+                        <div class="contact-social-section">
+                            <h4 class="connect-title"><i class="fas fa-link"></i> Connect With Me</h4>
+                            <div class="connect-items">
+                                <a href="https://www.linkedin.com/in/hammad-karimm" target="_blank" rel="noopener" class="connect-item">
+                                    <i class="fab fa-linkedin-in"></i>
+                                    <span>@hammad-karimm</span>
+                                </a>
+                                <a href="https://www.instagram.com/hammad._.karim/" target="_blank" rel="noopener" class="connect-item">
+                                    <i class="fab fa-instagram"></i>
+                                    <span>@hammad._.karim</span>
+                                </a>
+                                 <a href="https://www.facebook.com/profile.php?id=61579650817230" target="_blank" rel="noopener" class="connect-item">
+                                    <i class="fab fa-facebook"></i>
+                                    <span>Let's Connect on Facebook</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; <span id="year"></span> Hammad Karim. All Rights Reserved.</p>
+            <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+        </div>
+    </footer>
+<!-- ===== CERTIFICATE LIGHTBOX ===== -->
+<div class="cert-lightbox" id="certLightbox">
+    <div class="cert-lightbox-content">
+        <img src="" alt="" id="certLightboxImg" />
+    </div>
+</div>
+<!-- ===== ADS WORK SWIPE GALLERY ===== -->
+<div class="ads-lightbox" id="adsLightbox">
+    <div class="ads-lightbox-scroll" id="adsLightboxScroll"></div>
+</div>
+    <script src="script.js?v=2"></script>
+</body>
+</html>
