@@ -270,26 +270,8 @@ function closeAdsLightbox() {
     adsLightboxScroll.innerHTML = '';
 }
 
-let adsStartScrollTop = 0;
-
-adsLightboxScroll.addEventListener('touchstart', () => {
-    adsStartScrollTop = adsLightboxScroll.scrollTop;
-}, { passive: true });
-
-adsLightboxScroll.addEventListener('touchend', (e) => {
-    const scrollMoved = Math.abs(adsLightboxScroll.scrollTop - adsStartScrollTop) > 3;
-    if (scrollMoved) return;
-    if (e.target.tagName === 'IMG') {
-        e.target.classList.toggle('zoomed');
-    } else if (e.target.classList.contains('ads-slide') || e.target === adsLightboxScroll) {
-        closeAdsLightbox();
-    }
-});
-
 adsLightboxScroll.addEventListener('click', (e) => {
-    if (e.target.tagName === 'IMG') {
-        e.target.classList.toggle('zoomed');
-    } else if (e.target.classList.contains('ads-slide') || e.target === adsLightboxScroll) {
+    if (e.target === adsLightboxScroll) {
         closeAdsLightbox();
     }
 });
