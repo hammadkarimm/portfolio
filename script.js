@@ -79,7 +79,7 @@ themeBtns.forEach(btn => {
     });
 });
 
-const savedTheme = localStorage.getItem('theme') || 'creamy';
+const savedTheme = localStorage.getItem('theme') || 'gradient';
 applyTheme(savedTheme);
 
     // ===== MOBILE HAMBURGER =====
