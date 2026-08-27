@@ -2067,37 +2067,22 @@ body {
 }
 .ads-lightbox-scroll {
     height: 100%;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    touch-action: pan-y;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    padding: 1.5rem 0;
-}
-
-.ads-slide {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 1.5rem;
+}
+
+.ads-pdf-frame {
     width: 100%;
+    max-width: 700px;
+    height: 100%;
+    border: none;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
 }
-
-.ads-slide img {
-    width: 90%;
-    max-width: 500px;
-    height: auto;
-    object-fit: contain;
-    cursor: zoom-in;
-    transition: transform 0.3s ease;
-}
-
-.ads-slide img.zoomed {
-    transform: scale(1.8);
-    cursor: zoom-out;
-}
-
 
 .techstack-item {
     background: var(--bg-card);
