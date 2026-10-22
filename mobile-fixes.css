@@ -1,0 +1,237 @@
+/* mobile-fixes.css — load AFTER portrait.css. Desktop is not affected (everything is inside phone media queries). */
+
+/* =====================================================================
+   POSITIONING CONTROL PANEL  (edit these numbers)
+   ---------------------------------------------------------------------
+   --hero-portrait-x       moves the HOME picture + circle + tags left/right.
+                           negative = left, positive = right.  e.g. -4vw  or  4vw
+
+   --hero-portrait-bottom  how far the portrait sits from the bottom of the hero.
+                           0px = flush with the bottom.  Negative pushes it further down.
+
+   --pill-vertical-shift   moves ALL service tags UP (negative) / DOWN (positive).
+                           e.g. -8%  = move tags up by 8% of the portrait height.
+                           To move UP  → use a more negative number, e.g. -10%
+                           To move DOWN→ use a less negative number, e.g. -4%
+
+   --hero-disc-size        diameter of the yellow circle behind the portrait.
+                           Larger number = bigger circle, smaller = smaller circle.
+                           To make it LARGER  → increase this value, e.g. 92vw
+                           To make it SMALLER → decrease this value, e.g. 76vw
+
+   --hero-disc-y           vertical centre of the circle inside the portrait box (%).
+                           Lower % = circle sits higher on screen.
+
+   --about-portrait-x      moves the ABOUT picture LEFT or RIGHT.
+                           0 = centred, positive = right, negative = left.
+                           To shift RIGHT → increase (e.g. 35vw)
+                           To shift LEFT  → decrease (e.g. 15vw)
+
+   --about-portrait-y      moves the ABOUT picture UP (negative) / DOWN (positive).
+   --hero-portrait-size / --about-portrait-size   picture sizes.
+   ===================================================================== */
+
+/* ---------- Variables for small phones (≤700 px wide) ---------- */
+@media (max-width:700px) {
+  :root {
+    /* Portrait size */
+    --hero-portrait-size: min(118vw, calc((100svh - 76px) * .65));
+
+    /* Horizontal offset (0 = centred) */
+    --hero-portrait-x: 0px;
+
+    /* How far from the bottom edge. 0px = flush; negative = pulled down slightly */
+    --hero-portrait-bottom: 0px;
+
+    /* Circle diameter — keep ≤ 92vw for a clear semi-circle */
+    --hero-disc-size: 110vw;
+
+    /* Circle vertical position inside the portrait box */
+    --hero-disc-y: 76%;
+
+    /* Service-tag vertical shift (unitless number = percentage points).
+       To move tags UP   → use a more negative number, e.g. -12
+       To move tags DOWN → use a less negative number, e.g.  -4  */
+    --pill-vertical-shift: -20;
+  }
+}
+
+/* ---------- Extra tweak for larger phones (≥680px tall, e.g. iPhone 16) ----------
+   On taller phones the portrait ends up floating above the bottom.
+   We pull it down a bit to stay flush with the hero bottom edge.              */
+@media (max-width:700px) and (min-height:680px) {
+  :root {
+    --hero-portrait-bottom: -3%;
+    /* pulls portrait down on taller phones */
+  }
+}
+
+/* ---------- Variables for tablets / larger phones (≤768 px wide) ---------- */
+@media (max-width:768px) {
+  :root {
+    --about-portrait-size: max(170vw, calc(100svh - 76px - 2rem));
+
+    /* HORIZONTAL POSITION of the About picture.
+       Increase (e.g. 35vw) → more face off-screen (shifts right)
+       Decrease (e.g. 15vw) → more of picture visible (shifts left) */
+    --about-portrait-x: 28vw;
+
+    /* Vertical offset of the About picture. Negative = up, positive = down */
+    --about-portrait-y: -2%;
+  }
+}
+
+/* ===== Horizontal position of the Home portrait slot (applies on all screen sizes) ===== */
+.hero-portrait-slot {
+  left: calc(50% + var(--hero-portrait-x, 0px))
+}
+
+/* ===================================================================
+   HOME  (phones ≤ 700 px wide)
+   =================================================================== */
+@media (max-width:700px) {
+
+  /* Portrait slot: drive size from variable; flush at the bottom with responsive offset */
+  .hero {
+    --hs: var(--hero-portrait-size)
+  }
+
+  .hero-portrait-slot {
+    bottom: var(--hero-portrait-bottom, 0px);
+    /* ← change --hero-portrait-bottom to move portrait up/down */
+  }
+
+  .portrait-img {
+    top: -4%;
+    height: 104%;
+    z-index: 3;
+    /* sits above pills (z-index:1) so portrait is always in front on mobile */
+    -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 2%), transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 calc(100% - 2%), transparent 100%);
+  }
+
+  /* Clip disc glow at hero bottom — eliminates yellow strip below portrait */
+  .disc-fade {
+    clip-path: inset(-200% -200% 0 -200%)
+  }
+
+  /* Yellow circle: driven entirely by control-panel variables.
+     To RESIZE the circle: change --hero-disc-size
+     To REPOSITION vertically: change --hero-disc-y */
+  .portrait-disc {
+    width: var(--hero-disc-size);
+    top: var(--hero-disc-y);
+    margin: calc(var(--hero-disc-size) / -2) 0 0 calc(var(--hero-disc-size) / -2);
+  }
+
+  /* PORTFOLIO background text: nudge it down so it sits lower in the hero */
+  .hero-bgtext {
+    margin-top: 8vh
+  }
+
+  /* ← increase to push PORTFOLIO text further DOWN, decrease to move UP */
+
+  /* Larger, clearly readable hero name and subtitle */
+  .hero .hero-name,
+  .hero .hero-sub {
+    font-size: clamp(1.6rem, 7.2vw, 2.4rem)
+  }
+
+  /* Service tags: completely still and stable.
+     z-index:1 puts them BEHIND the portrait image (which gets z-index:3 below) */
+  .pill {
+    z-index: 1;
+    width: max-content
+  }
+
+  .pill-in {
+    animation: none;
+    white-space: normal;
+    max-width: 118px;
+    line-height: 1.15;
+  }
+
+  /* Service-tag positions: adjust --pill-vertical-shift in the :root block above.
+     To move ALL tags UP  → make --pill-vertical-shift more negative, e.g. -12
+     To move ALL tags DOWN→ make --pill-vertical-shift less negative, e.g.  -4  */
+  .pill:nth-child(2) {
+    --mx: 24 !important;
+    --my: calc(62 + var(--pill-vertical-shift, 0)) !important
+  }
+
+  /* Google Ads Manager   */
+  .pill:nth-child(3) {
+    --mx: 76 !important;
+    --my: calc(62 + var(--pill-vertical-shift, 0)) !important
+  }
+
+  /* Full Stack Developer */
+  .pill:nth-child(6) {
+    --mx: 24 !important;
+    --my: calc(80 + var(--pill-vertical-shift, 0)) !important
+  }
+
+  /* Lead Generation      */
+  .pill:nth-child(5) {
+    --mx: 76 !important;
+    --my: calc(80 + var(--pill-vertical-shift, 0)) !important
+  }
+
+  /* Web Development      */
+}
+
+/* ===================================================================
+   ABOUT  (phones ≤ 768 px wide)
+   =================================================================== */
+@media (max-width:768px) {
+
+  /* ---- About portrait: large, bleeding off the right edge ---- */
+  .about-portrait-slot {
+    position: absolute;
+    order: 0;
+    left: calc(50% + var(--about-portrait-x));
+    /* change --about-portrait-x to shift left/right */
+    top: var(--about-portrait-y);
+    /* change --about-portrait-y to shift up/down */
+    transform: translateX(-50%);
+    margin: 0;
+    width: var(--about-portrait-size);
+  }
+
+  /* Grayscale: now handled by portrait.js which applies filter:grayscale() directly
+     on the .portrait-img element as the user scrolls into the About section.
+     (The JS mob.matches guard was removed so grayscale works on mobile too.) */
+  /* Dark right-to-left gradient shadow layered over the portrait slot
+     so text on the left is always legible and the edge blends into the dark background */
+  .about-portrait-slot::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(to right,
+        rgba(0, 0, 0, 0.82) 0%,
+        rgba(0, 0, 0, 0.5) 35%,
+        rgba(0, 0, 0, 0.15) 65%,
+        rgba(0, 0, 0, 0) 100%);
+    z-index: 2;
+  }
+
+  /* Services tabs: same 2-column grid layout as Portfolio tabs */
+  .services-toggle:not(.portfolio-toggle) {
+    grid-template-columns: repeat(2, 1fr)
+  }
+
+  .services-toggle:not(.portfolio-toggle) .service-toggle-btn:last-child {
+    grid-column: 1 / -1
+  }
+}
+
+@media (max-width:768px) {
+
+  .education-content h3,
+  .education-content .education-institution,
+  .education-content .education-meta,
+  .education-content .education-location {
+    text-align: center;
+  }
+}

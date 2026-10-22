@@ -48,39 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(typeRole, speed);
     }
 
-    typeRole();
+        if (typingText) typeRole();
 
-    // ===== THEME SWITCHER =====
-    const themeBtns = document.querySelectorAll('.theme-btn');
-const body = document.body;
-const themeSwitcher = document.getElementById('themeSwitcher');
-const themeToggleArrow = document.getElementById('themeToggleArrow');
-const themeOrder = ['creamy', 'light', 'dark', 'blue', 'gradient'];
-
-function applyTheme(theme) {
-    body.setAttribute('data-theme', theme);
-    themeBtns.forEach(b => b.classList.toggle('active', b.dataset.theme === theme));
-    localStorage.setItem('theme', theme);
-}
-
-themeToggleArrow.addEventListener('click', () => {
-    themeSwitcher.classList.toggle('expanded');
-});
-
-themeBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        if (!themeSwitcher.classList.contains('expanded') && btn.classList.contains('active')) {
-            const currentIndex = themeOrder.indexOf(body.getAttribute('data-theme'));
-            applyTheme(themeOrder[(currentIndex + 1) % themeOrder.length]);
-            return;
-        }
-        applyTheme(btn.dataset.theme);
-        themeSwitcher.classList.remove('expanded');
-    });
-});
-
-const savedTheme = localStorage.getItem('theme') || 'gradient';
-applyTheme(savedTheme);
+    
 
     // ===== MOBILE HAMBURGER =====
     const hamburger = document.getElementById('hamburger');
@@ -103,32 +73,25 @@ applyTheme(savedTheme);
     });
 
     // ===== ACTIVE LINK HIGHLIGHT =====
-    const sections = document.querySelectorAll('section[id]');
+       const sections = [...document.querySelectorAll('section[id]')];
     const navLinksAll = document.querySelectorAll('.nav-link');
-
+    let tops = [], ticking = false, activeId = '';
+    const cacheTops = () => { tops = sections.map(s => s.offsetTop - 120); };
     function highlightNav() {
+        ticking = false;
         let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 120;
-            if (window.scrollY >= sectionTop) {
-                current = section.getAttribute('id');
-            }
-        });
-        navLinksAll.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
+        for (let i = 0; i < tops.length; i++) if (window.scrollY >= tops[i]) current = sections[i].id;
+        if (current === activeId) return;
+        activeId = current;
+        navLinksAll.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
     }
-    window.addEventListener('scroll', highlightNav);
-    highlightNav();
+    cacheTops(); highlightNav();
+    window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(highlightNav); } }, { passive: true });
+    window.addEventListener('resize', cacheTops);
+    window.addEventListener('load', cacheTops);
+    document.addEventListener('click', () => setTimeout(cacheTops, 80));   // tabs change page height
 
-    // ===== BACK TO TOP =====
-    const backBtn = document.getElementById('backToTop');
-    backBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+   
 
     // ===== SCROLL REVEAL ANIMATIONS =====
     const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger');
@@ -157,9 +120,52 @@ const revealObserver = new IntersectionObserver((entries) => {
 
     revealElements.forEach(el => revealObserver.observe(el));
 
-    // ===== CONTACT FORM VALIDATION =====
+    // ===== MESSAGE MODAL =====
+const openMessageModalBtn = document.getElementById('openMessageModal');
+const closeMessageModalBtn = document.getElementById('closeMessageModal');
+const messageModalOverlay = document.getElementById('messageModalOverlay');
 const contactForm = document.getElementById('contactForm');
+const messageTextarea = document.getElementById('message');
 const formFeedback = document.getElementById('formFeedback');
+
+let formHasInput = false;
+
+function checkFormHasInput() {
+    const fields = contactForm.querySelectorAll('input, textarea');
+    formHasInput = Array.from(fields).some(f => f.value.trim().length > 0);
+}
+
+contactForm.addEventListener('input', checkFormHasInput);
+
+function openMessageModal() {
+    if (!messageModalOverlay) return;
+    messageModalOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeMessageModal(force) {
+    if (!messageModalOverlay) return;
+    if (!force) {
+        checkFormHasInput();
+        if (formHasInput) return;
+    }
+    messageModalOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+    if (messageTextarea) messageTextarea.style.height = '';
+}
+
+if (openMessageModalBtn) openMessageModalBtn.addEventListener('click', openMessageModal);
+if (closeMessageModalBtn) closeMessageModalBtn.addEventListener('click', () => closeMessageModal(true));
+if (messageModalOverlay) {
+    messageModalOverlay.addEventListener('click', (e) => {
+        if (e.target === messageModalOverlay) closeMessageModal(false);
+    });
+}
+window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMessageModal(false);
+});
+
+    // ===== CONTACT FORM VALIDATION =====
 
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -182,11 +188,13 @@ contactForm.addEventListener('submit', (e) => {
         method: 'POST',
         body: new FormData(contactForm),
         headers: { 'Accept': 'application/json' }
-    }).then(response => {
+          }).then(response => {
         if (response.ok) {
             formFeedback.textContent = '✅ Message sent successfully!';
             formFeedback.style.color = '#6b8c6b';
             contactForm.reset();
+            formHasInput = false;
+            setTimeout(() => closeMessageModal(true), 1500);
         } else {
             formFeedback.textContent = '⚠️ Something went wrong. Please try again.';
             formFeedback.style.color = '#b8865a';
@@ -225,6 +233,22 @@ portfolioTabs.forEach(tab => {
             content.classList.remove('active');
         });
         document.getElementById(`tab-${target}`).classList.add('active');
+    });
+});
+
+// ===== SERVICES TOGGLE =====
+const serviceToggleBtns = document.querySelectorAll('.service-toggle-btn');
+const pricingContents = document.querySelectorAll('.pricing-content');
+
+serviceToggleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const target = btn.dataset.service;
+
+        serviceToggleBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        pricingContents.forEach(content => content.classList.remove('active'));
+        document.getElementById(`service-${target}`).classList.add('active');
     });
 });
 // ===== CERTIFICATE LIGHTBOX =====
@@ -286,13 +310,4 @@ if (heroSlides.length > 0) {
         heroSlides[heroSlideIndex].classList.add('active');
     }, 3000);
 }
-// ===== DOWNLOAD CV =====
-const downloadCvBtn = document.getElementById('downloadCvBtn');
-downloadCvBtn.addEventListener('click', () => {
-    const link = document.createElement('a');
-    link.href = 'CV.pdf';
-    link.download = 'Hammad_Karim_CV.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-});
+ 

@@ -7,30 +7,39 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="style.css?v=2" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Titillium+Web:ital,wght@0,300;0,400;0,600;0,700;0,900;1,700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400&family=Noto+Nastaliq+Urdu:wght@700&family=Noto+Naskh+Arabic:wght@700&family=Noto+Sans+Devanagari:wght@800&family=Noto+Sans+Gurmukhi:wght@800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css?v=6" />
+<link rel="stylesheet" href="portrait.css?v=10" />
+<link rel="stylesheet" href="mobile-fixes.css?v=2" />
+<link rel="icon" type="image/png" href="faviicon.png" />
+<link rel="apple-touch-icon" href="faviicon.png" />
 </head>
-<body data-theme="gradient">
+<body >
     <!-- ===== GRADIENT BACKGROUND ===== -->
-    <div class="gradient-bg"></div>
-
-    <!-- ===== THEME SWITCHER ===== -->
-    <div class="theme-switcher" id="themeSwitcher">
-    <button class="theme-btn" data-theme="creamy" title="Creamy"><span class="check">✓</span></button>
-    <button class="theme-btn" data-theme="light" title="Light"><span class="check">✓</span></button>
-    <button class="theme-btn" data-theme="dark" title="Dark"><span class="check">✓</span></button>
-    <button class="theme-btn" data-theme="blue" title="Blue"><span class="check">✓</span></button>
-    <button class="theme-btn active" data-theme="gradient" title="Gradient"><span class="check">✓</span></button>
-    <button class="theme-toggle-arrow" id="themeToggleArrow" aria-label="Show theme options">
-        <i class="fas fa-chevron-up"></i>
-    </button>
+        <div class="gradient-bg"></div>
+            <!-- ===== PORTRAIT (moves from Home to About on scroll) ===== -->
+        <div class="portrait-wrap" id="portraitWrap">
+        <div class="portrait-disc"></div>
+        <div class="pill" style="--x:9;--y:32;--mx:14;--my:26" data-ry="30" data-rz="-6" data-d="26" data-s="1"><div class="pill-3d"><div class="pill-in"><i class="fab fa-google"></i>Google Ads Manager</div></div></div>
+<div class="pill" style="--x:91;--y:32;--mx:86;--my:26" data-ry="-30" data-rz="6" data-d="34" data-s="1"><div class="pill-3d"><div class="pill-in"><i class="fas fa-code"></i>Full Stack Developer</div></div></div>
+<div class="pill" style="--x:6;--y:56;--mx:14;--my:48" data-ry="34" data-rz="4" data-d="18" data-s=".95"><div class="pill-3d"><div class="pill-in"><i class="fas fa-chart-line"></i>Tracking &amp; Analytics</div></div></div>
+<div class="pill" style="--x:94;--y:56;--mx:86;--my:50" data-ry="-34" data-rz="-4" data-d="22" data-s=".95"><div class="pill-3d"><div class="pill-in"><i class="fas fa-laptop-code"></i>Web Development</div></div></div>
+<div class="pill" style="--x:-15;--y:80;--mx:15;--my:78" data-ry="28" data-rz="5" data-d="30" data-s="1"><div class="pill-3d"><div class="pill-in"><i class="fas fa-bullseye"></i>Lead Generation</div></div></div>
+<div class="pill" style="--x:110;--y:80;--mx:84;--my:74" data-ry="-28" data-rz="-5" data-d="16" data-s="1">
+  <div class="pill-3d">
+    <div class="pill-in"><i>🔌</i>API Developer</div>
+  </div>
 </div>
+        <img class="portrait-img" src="portrait.png" alt="Hammad Karim" />
+    </div>
 
+    
     <!-- ===== NAVBAR ===== -->
     <header class="navbar" id="navbar">
         <div class="container nav-container">
-            <div class="logo"></i> HammadKarim</div>
-            <nav class="nav-links" id="navLinks">
+                       <a href="#hero" class="logo">HAMMAD KARIM</a>
+            <nav class="nav-links" id="navLinks"><div class="menu-name">HAMMAD KARIM</div>
                 <ul>
     <li><a href="#hero" class="nav-link active">Home</a></li>
     <li><a href="#about" class="nav-link">About</a></li>
@@ -41,124 +50,163 @@
     <li><a href="#contact" class="nav-link">Contact</a></li>
 </ul>
             </nav>
-            <button class="hamburger" id="hamburger" aria-label="Menu">
-                <i class="fas fa-bars"></i>
-            </button>
+            <div class="nav-right">
+                <a href="https://wa.me/923171313885?text=Hi%20Hammad%2C%20I%20came%20across%20your%20website%20and%20I%27m%20interested%20in%20your%20services.%20I%27d%20like%20to%20discuss%20what%20I%20need%20and%20learn%20more%20about%20how%20you%20can%20help%20me.%20I%20am%20interested%20in%20%5BChoose%20One%3A%20Google%20Ads%20Management%20or%20Related%20Services%20%2F%20Full-Stack%20Web%20Development%20or%20Related%20Services%5D." target="_blank" rel="noopener" class="nav-whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
     </header>
 
     <main>
-        <!-- ===== HERO ===== -->
-        <section id="hero" class="hero section-padding">
-            <div class="container hero-grid">
-                <div class="hero-content reveal-left">
-                    <div class="badge"><i class="fa-solid fa-medal"></i> Certified Google ads Specialist</div>
-                    <h1 style="line-height: 1.2;">Google Ads<br />Manager</h1>
-                    <div class="hero-role-wrapper">
-                        <span class="static-text">I'm a </span>
-                        <span class="typing-text" id="typingText"></span>
-                        <span class="cursor">|</span>
-                    </div>
-                    <p class="hero-desc">
-                        <i class="fas fa-quote-left" style="opacity:0.4;margin-right:0.3rem;"></i>
-                        I will Setup & Manage your Google Ads Campaign for E-Commerce & Lead Generation
-                        <i class="fas fa-quote-right" style="opacity:0.4;margin-left:0.3rem;"></i>
-
-                    </p>
-                    <div class="hero-cta">
-                        <a href="#portfolio" class="btn btn-primary"><i class="fas fa-eye"></i> Portfolio</a>
-                        <a href="#contact" class="btn btn-secondary"><i class="fas fa-paper-plane"></i> Contact Me</a>
-                    </div>
-                </div>
-                <div class="hero-video-wrapper reveal-right">
-    <div class="ad-slideshow" id="heroSlideshow">
-        <img src="1.png" class="ad-slide active" alt="Featured sample" />
-        <img src="2.png" class="ad-slide" alt="Featured sample" />
-        <img src="3.png" class="ad-slide" alt="Featured sample" />
-    </div>
-    <div class="video-overlay"></div>
-    
-</div>
+                <!-- ===== HERO ===== -->
+                        <section id="hero" class="hero">
+            <div class="hero-bgtext" aria-hidden="true"><span class="bgtext-in">PORTFOLIO</span></div>
+            <div class="hero-text">
+                <p class="hero-hello">Hello!</p>
+                <h1 class="hero-name">I'm <em>Hammad Karim</em> <span class="wave">👋</span></h1>
+                <p class="hero-sub">Google Ads Manager &amp; Full Stack Developer</p>
             </div>
+            <div class="hero-portrait-slot" id="heroSlot"></div>
         </section>
 
-        <!-- ===== ABOUT ===== -->
-        <section id="about" class="about section-padding">
+                <!-- ===== ABOUT ===== -->
+                <section id="about" class="about section-padding">
             <div class="container">
-                <div class="about-header reveal">
-                    <h2 class="section-title">About Me</h2>
-                    <p class="about-tagline"> Google Ads Manager | Full-Stack Developer </p>
-                </div>
-                
                 <div class="about-wrapper">
-                    <div class="about-image reveal-left">
-                        <div class="profile-image-placeholder">
-                            <img src="image.png" alt="Abdul Rafay Akhtar" />
-                        </div>
-                    </div>
-                    <div class="about-content reveal-right">
-                        <h3 class="about-name">Hello, I'm <br>Hammad Karim</h3>
-                        <p style="text-align: justify;">
-                            I’m a Google Ads Manager focused on e-commerce, with lead-generation experience. I help businesses optimize campaigns, drive measurable results, and grow through practical performance marketing. 
-                            Alongside Google Ads, I’m also a Full-Stack Developer building modern, responsive websites and web applications.
-                        </p>
-                        
+                    <div class="about-content">
+                        <h2 class="about-title">About me</h2>
+                        <div class="about-tagline">Google Ads Manager | Full-Stack Developer</div>
+                        <p>I'm <b>Hammad Karim</b>, a <mark>Google Ads Manager focused on e&#8209;commerce</mark>, with lead-generation experience.</p>
+                        <p>I help businesses <mark>optimize campaigns, drive measurable results,</mark> and grow through practical performance marketing.</p>
+                        <p>Alongside Google Ads, I'm also a <mark>Full-Stack Developer</mark> building modern, responsive websites and web applications.</p>
                         <div class="about-cta">
-                           <a href="CV.pdf" download="Hammad_Karim_CV.pdf" class="btn btn-primary">
-    <i class="fas fa-download"></i> Download CV
-</a>
-                            
+                            <a href="CV.pdf" download="Hammad_Karim_CV.pdf" class="btn btn-primary"><i class="fas fa-download"></i> Download CV</a>
                         </div>
                     </div>
+                    <div class="about-portrait-slot" id="aboutSlot"><span class="about-band" id="aboutBand"></span></div>
                 </div>
-
-                
             </div>
         </section>
 
         
 
-        <!-- ===== SERVICES ===== -->
+       <!-- ===== SERVICES ===== -->
 <section id="services" class="services section-padding">
     <div class="container">
         <h2 class="section-title reveal">Services</h2>
-        <p class="services-tagline reveal">Here's how I can help grow your e-commerce or lead-gen business through Google Ads.</p>
+       
 
-        <div class="services-grid">
-            <div class="service-card reveal">
-                <div class="service-icon"><i class="fas fa-bullseye"></i></div>
-                <h3>Google Ads Setup and Management</h3>
-                <p >I'll build your campaigns from scratch and manage them daily to keep performance consistent and profitable.</p>
+        <div class="services-toggle reveal">
+            <button class="service-toggle-btn active" data-service="google-ads">Google Ads</button>
+            <button class="service-toggle-btn" data-service="tracking">Tracking</button>
+            <button class="service-toggle-btn" data-service="web-dev">Web Development</button>
+        </div>
+
+        <div class="pricing-content active" id="service-google-ads">
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 class="pricing-tier">Basic</h3>
+                    <div class="pricing-price">US$40</div>
+                    <p class="pricing-package">1 CAMPAIGN SETUP</p>
+                    <p class="pricing-details">Keyword Research + Ad Extensions + Negative Keywords + Ad Copy + Audience targeting + Bidding</p>
+                    <p class="pricing-delivery"><i class="fas fa-clock"></i> 3-day delivery</p>
+                    <a href="#contact" class="btn btn-primary pricing-cta">Get Started</a>
+                </div>
+                <div class="pricing-card popular">
+                    <span class="popular-tag">Most Popular</span>
+                    <h3 class="pricing-tier">Standard</h3>
+                    <div class="pricing-price">US$75</div>
+                    <p class="pricing-package">UPTO 3 CAMPAIGN SETUP</p>
+                    <p class="pricing-details">Basic + Up to 3 campaigns: Search, Display, Performance Max, Shopping, or Remarketing</p>
+                    <p class="pricing-delivery"><i class="fas fa-clock"></i> 6-day delivery</p>
+                    <a href="#contact" class="btn btn-primary pricing-cta">Get Started</a>
+                </div>
+                <div class="pricing-card">
+                    <h3 class="pricing-tier">Premium</h3>
+                    <div class="pricing-price">US$160</div>
+                    <p class="pricing-package">CUSTOM CAMPAIGN SETUP</p>
+                    <p class="pricing-details">Basic + Custom campaigns (any campaign type) + 7-day management and optimization</p>
+                    <p class="pricing-delivery"><i class="fas fa-clock"></i> 7-day delivery</p>
+                    <a href="#contact" class="btn btn-primary pricing-cta">Get Started</a>
+                </div>
             </div>
-
-            <div class="service-card reveal">
-                <div class="service-icon"><i class="fas fa-diagram-project"></i></div>
-                <h3>Conversion Tracking Setup</h3>
-                <p>I'll set up accurate conversion tracking so every sale and lead gets measured correctly, no guesswork.</p>
+                   <div class="additional-services">
+                <h3 class="additional-services-title">Additional Services</h3>
+                <div class="additional-services-list">
+                    <div class="additional-service-item">
+                        <h4><i class="fas fa-store"></i> Google Merchant Center Setup</h4>
+                        <p>I'll set up and optimize your product feed so your items show up correctly and stay approved for Shopping ads.</p>
+                    </div>
+                    <div class="additional-service-item">
+                        <h4><i class="fas fa-chart-line"></i> Ongoing Optimization and Reporting</h4>
+                        <p>I'll continuously monitor, test, and report on results so your campaigns keep improving over time.</p>
+                    </div>
+                </div>
             </div>
+        </div>
 
-            <div class="service-card reveal">
-                <div class="service-icon"><i class="fas fa-chart-line"></i></div>
-                <h3>Analytics and Tracking (GA4 / GTM)</h3>
-                <p>I'll configure Google Tag Manager and GA4 to give you clear, reliable data on how users behave on your site.</p>
+        <div class="pricing-content" id="service-tracking">
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 class="pricing-tier">Basic</h3>
+                    <div class="pricing-price">US$5</div>
+                    <p class="pricing-package">GA4 + GTM Setup</p>
+                    <p class="pricing-details">Google Analytics + GTM setup + Google Signal Enable ✔️Page-view ✔️Session-start track</p>
+                    <p class="pricing-delivery"><i class="fas fa-clock"></i> 1-day delivery</p>
+                    <a href="#contact" class="btn btn-primary pricing-cta">Get Started</a>
+                </div>
+                <div class="pricing-card popular">
+                    <span class="popular-tag">Most Popular</span>
+                    <h3 class="pricing-tier">Standard</h3>
+                    <div class="pricing-price">US$19</div>
+                    <p class="pricing-package">Google Ads Conversion Tracking</p>
+                    <p class="pricing-details">✔️ Google Ads Conversion Tracking (ECOMMERCE purchase) ✔️ Form Submit ✔️ Booking ✔️ Phone Call, etc.</p>
+                    <p class="pricing-delivery"><i class="fas fa-clock"></i> 2-day delivery</p>
+                    <a href="#contact" class="btn btn-primary pricing-cta">Get Started</a>
+                </div>
+                <div class="pricing-card">
+                    <h3 class="pricing-tier">Premium</h3>
+                    <div class="pricing-price">US$70</div>
+                    <p class="pricing-package">Complete website Tracking</p>
+                    <p class="pricing-details">✔️ GA4 eCommerce Events Tracking, ✔️Google Ads Enhance Conversion Track</p>
+                    <p class="pricing-delivery"><i class="fas fa-clock"></i> 3-day delivery</p>
+                    <a href="#contact" class="btn btn-primary pricing-cta">Get Started</a>
+                </div>
             </div>
+        </div>
 
-            <div class="service-card reveal">
-                <div class="service-icon"><i class="fas fa-store"></i></div>
-                <h3>Google Merchant Center Setup</h3>
-                <p>I'll set up and optimize your product feed so your items show up correctly and stay approved for Shopping ads.</p>
-            </div>
-
-            <div class="service-card reveal">
-                <div class="service-icon"><i class="fas fa-cart-shopping"></i></div>
-                <h3>Shopping and Performance Max Ads</h3>
-                <p>I'll build and optimize Shopping and Performance Max campaigns to drive sales across Google's full network.</p>
-            </div>
-
-            <div class="service-card reveal">
-                <div class="service-icon"><i class="fas fa-gears"></i></div>
-                <h3>Ongoing Optimization and Reporting</h3>
-                <p>I'll continuously monitor, test, and report on results so your campaigns keep improving over time.</p>
+        <div class="pricing-content" id="service-web-dev">
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 class="pricing-tier">Basic</h3>
+                    <div class="pricing-price">US$85</div>
+                    <p class="pricing-package">1 Page Website</p>
+                    <p class="pricing-details">1-page website with custom development or static code, without API integration</p>
+                    <p class="pricing-delivery"><i class="fas fa-clock"></i> 4-day delivery</p>
+                    <a href="#contact" class="btn btn-primary pricing-cta">Get Started</a>
+                </div>
+                <div class="pricing-card popular">
+                    <span class="popular-tag">Most Popular</span>
+                    <h3 class="pricing-tier">Standard</h3>
+                    <div class="pricing-price">US$285</div>
+                    <p class="pricing-package">3-4 Pages Website</p>
+                    <p class="pricing-details">3–4 pages website based on your design/reference, with basic API integration and CMS options</p>
+                    <p class="pricing-delivery"><i class="fas fa-clock"></i> 10-day delivery</p>
+                    <a href="#contact" class="btn btn-primary pricing-cta">Get Started</a>
+                </div>
+                <div class="pricing-card">
+                    <h3 class="pricing-tier">Premium</h3>
+                    <div class="pricing-price">US$585</div>
+                    <p class="pricing-package">6-8 Pages Website</p>
+                    <p class="pricing-details">6–8 pages custom website with front-end development and API integration, built for scalability</p>
+                    <p class="pricing-delivery"><i class="fas fa-clock"></i> 10-day delivery</p>
+                    <a href="#contact" class="btn btn-primary pricing-cta">Get Started</a>
+                </div>
             </div>
         </div>
     </div>
@@ -172,17 +220,12 @@
                     
                 </div>
 
-                <!-- Tab Navigation -->
-                <div class="portfolio-tabs reveal">
-                    <button class="portfolio-tab active" data-tab="projects">
-                        <i class="fas fa-chart-line"></i> Google Ads Work
-                    </button>
-                    <button class="portfolio-tab" data-tab="certificates">
-                        <i class="fas fa-certificate"></i> Certificates
-                    </button>
-                    <button class="portfolio-tab" data-tab="techstack">
-                        <i class="fas fa-layer-group"></i> Tools & Platforms
-                    </button>
+                                <!-- Tab Navigation -->
+                                <div class="services-toggle portfolio-toggle reveal">
+                    <button class="portfolio-toggle-btn portfolio-tab active" data-tab="projects">Google Ads Work</button>
+                    <button class="portfolio-toggle-btn portfolio-tab" data-tab="webdev">Web Development</button>
+                    <button class="portfolio-toggle-btn portfolio-tab" data-tab="certificates">Certificates</button>
+                    <button class="portfolio-toggle-btn portfolio-tab" data-tab="techstack">Tools & Platforms</button>
                 </div>
 
                 <!-- Tab Content: Projects -->
@@ -211,6 +254,26 @@
                 <h4>Google Search Ads Practice</h4>
             </div>
         </div>
+        </div>
+</div>
+
+                <!-- Tab Content: Web Development -->
+                <div class="portfolio-content" id="tab-webdev">
+    <div class="webdev-grid">
+        <div class="webdev-card">
+            <div class="webdev-media">
+                <video class="webdev-video" src="frontline.mp4" autoplay muted loop playsinline></video>
+            </div>
+            <div class="webdev-info">
+                <span class="webdev-category">Welfare Organization</span>
+                <span class="webdev-type">Custom Website</span>
+                <h3 class="webdev-name">Front Line Care Foundation</h3>
+                <p class="webdev-location"><i class="fas fa-map-marker-alt"></i> Islamabad, Pakistan</p>
+                <a href="https://www.frontlinecarefoundation.com/" target="_blank" rel="noopener" class="btn btn-primary webdev-visit-btn">Visit Live Project <i class="fas fa-arrow-up-right-from-square"></i></a>
+            </div>
+        </div>
+
+        <!-- Copy the .webdev-card block above for each new project; swap the video src, category, type, name, location and link -->
     </div>
 </div>
 
@@ -249,18 +312,46 @@
     </div>
    
 </div>
-
                 <!-- Tab Content: Tech Stack -->
                 <div class="portfolio-content" id="tab-techstack">
-    <div class="techstack-grid">
-        <div class="techstack-item"><i class="fab fa-google"></i><span>Google Ads</span></div>
-        <div class="techstack-item"><i class="fas fa-tags"></i><span>Google Tag Manager</span></div>
-        <div class="techstack-item"><i class="fas fa-store"></i><span>G Merchant Center</span></div>
-        <div class="techstack-item"><i class="fas fa-chart-line"></i><span>Google Analytics 4</span></div>
-        <div class="techstack-item"><i class="fab fa-shopify"></i><span>Shopify</span></div>
-        <div class="techstack-item"><i class="fas fa-table"></i><span>Google Sheets</span></div>
-        <div class="techstack-item"><i class="fas fa-file-lines"></i><span>Google Docs</span></div>
-        
+    <div class="techstack-category">
+        <h3 class="techstack-category-title">Google Ads & Marketing</h3>
+        <div class="techstack-grid">
+            <div class="techstack-item"><img src="tools/1.png" alt="Google Ads" /><span>Google Ads</span></div>
+            <div class="techstack-item"><img src="tools/2.png" alt="Google Tag Manager" /><span>Google Tag Manager</span></div>
+            <div class="techstack-item"><img src="tools/3.png" alt="G Merchant Center" /><span>G Merchant Center</span></div>
+            <div class="techstack-item"><img src="tools/4.png" alt="Google Analytics 4" /><span>Google Analytics 4</span></div>
+            <div class="techstack-item"><img src="tools/5.png" alt="Shopify" /><span>Shopify</span></div>
+            <div class="techstack-item"><img src="tools/6.png" alt="Google Sheets" /><span>Google Sheets</span></div>
+            <div class="techstack-item"><img src="tools/7.png" alt="Google Docs" /><span>Google Docs</span></div>
+        </div>
+    </div>
+
+    <div class="techstack-category">
+        <h3 class="techstack-category-title">Web Development</h3>
+        <div class="techstack-grid">
+            <div class="techstack-item"><img src="tools/8.png" alt="React" /><span>React</span></div>
+            <div class="techstack-item"><img src="tools/9.png" alt="Node.js" /><span>Node.js</span></div>
+            <div class="techstack-item"><img src="tools/10.png" alt="HTML" /><span>HTML</span></div>
+            <div class="techstack-item"><img src="tools/11.png" alt="CSS" /><span>CSS</span></div>
+            <div class="techstack-item"><img src="tools/12.png" alt="JavaScript" /><span>JavaScript</span></div>
+            <div class="techstack-item"><img src="tools/13.png" alt="C++" /><span>C++</span></div>
+            <div class="techstack-item"><img src="tools/14.png" alt="C#" /><span>C#</span></div>
+            <div class="techstack-item"><img src="tools/15.png" alt="Python" /><span>Python</span></div>
+            <div class="techstack-item"><img src="tools/16.png" alt="MySQL" /><span>MySQL</span></div>
+        </div>
+    </div>
+
+    <div class="techstack-category">
+        <h3 class="techstack-category-title">Design & Creative Tools</h3>
+        <div class="techstack-grid">
+            <div class="techstack-item"><img src="tools/17.png" alt="Adobe Photoshop" /><span>Adobe Photoshop</span></div>
+            <div class="techstack-item"><img src="tools/18.png" alt="Adobe Illustrator" /><span>Adobe Illustrator</span></div>
+            <div class="techstack-item"><img src="tools/19.png" alt="Adobe Premiere Pro" /><span>Adobe Premiere Pro</span></div>
+            <div class="techstack-item"><img src="tools/20.png" alt="CapCut" /><span>CapCut</span></div>
+            <div class="techstack-item"><img src="tools/21.png" alt="Canva" /><span>Canva</span></div>
+                        <div class="techstack-item"><img src="tools/22.png" alt="Figma" /><span>Figma</span></div>
+        </div>
     </div>
 </div>
             </div>
@@ -325,88 +416,153 @@
                 
             </div>
         </section>
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="contact section-padding">
+    <div class="container">
+        <div class="contact-hero reveal">
+            <h2 class="section-title">Let's Get Together</h2>
+            <p class="contact-tagline">Looking for Google Ads management or a full-stack developer? Let’s talk about your project and find the right solution for your business.</p>
 
-        <!-- ===== CONTACT ===== -->
-        <section id="contact" class="contact section-padding">
-            <div class="container">
-                <div class="contact-header reveal">
-                    <h2 class="section-title">Contact Me</h2>
-                    <p class="contact-tagline" >Looking to scale your e-commerce business with Google Ads? Get in touch to discuss your goals and how I can help create, manage, and optimize campaigns for better results.</p>
+                       <div class="contact-options">
+                <a href="https://wa.me/923171313885?text=Hi%20Hammad%2C%20I%20came%20across%20your%20website%20and%20I%27m%20interested%20in%20your%20services.%20I%27d%20like%20to%20discuss%20what%20I%20need%20and%20learn%20more%20about%20how%20you%20can%20help%20me.%20I%20am%20interested%20in%20%5BChoose%20One%3A%20Google%20Ads%20Management%20or%20Related%20Services%20%2F%20Full-Stack%20Web%20Development%20or%20Related%20Services%5D." target="_blank" rel="noopener" class="contact-pill-btn pill-whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Chat on WhatsApp Now</span>
+                </a>
+
+                <button type="button" class="contact-pill-btn pill-message" id="openMessageModal">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Send a Message</span>
+                </button>
+            </div>
+        </div>
+
+                <p class="contact-info-label reveal">Or reach me directly</p>
+        <div class="contact-info-grid reveal">
+            <a href="mailto:hammadkarim07@gmail.com" class="contact-detail-item">
+                <div class="detail-icon"><i class="fas fa-envelope"></i></div>
+                <div class="detail-meta">
+                    <span class="detail-name">Email</span>
+                    <span class="detail-val">hammadkarim07@gmail.com</span>
+                </div>
+            </a>
+
+            <a href="tel:+923171313885" class="contact-detail-item">
+                <div class="detail-icon"><i class="fas fa-phone"></i></div>
+                <div class="detail-meta">
+                    <span class="detail-name">Phone / WhatsApp</span>
+                    <span class="detail-val">+92 317 1313 885</span>
+                </div>
+            </a>
+
+            <div class="contact-detail-item">
+                <div class="detail-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="detail-meta">
+                    <span class="detail-name">Location</span>
+                    <span class="detail-val">Islamabad, Pakistan</span>
+                </div>
+            </div>
+
+            <div class="contact-detail-item">
+                <div class="detail-icon"><i class="fas fa-briefcase"></i></div>
+                <div class="detail-meta">
+                    <span class="detail-name">Availability</span>
+                                        <span class="detail-val">Open to Work / Project Inquiries</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== MESSAGE MODAL ===== -->
+<div class="message-modal-overlay" id="messageModalOverlay">
+    <div class="message-modal">
+        <button type="button" class="message-modal-close" id="closeMessageModal" aria-label="Close">
+            <i class="fas fa-times"></i>
+        </button>
+        <h3 class="contact-form-title"><i class="fas fa-envelope"></i> Send a Message</h3>
+        <p class="contact-form-subtitle">Fill this out and I'll get back to you shortly.</p>
+
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/mgawjnlk" method="POST">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <div class="input-wrap">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <div class="input-wrap">
+                    <input type="email" id="email" name="email" placeholder="Your Email" required />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="message">Your Message</label>
+                <div class="input-wrap">
+                    <textarea id="message" name="message" rows="3" placeholder="Your Message" required></textarea>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary contact-submit-btn">
+                <span>Send Message</span>
+                <span class="btn-arrow-circle"><i class="fas fa-paper-plane"></i></span>
+            </button>
+            <div class="form-feedback" id="formFeedback"></div>
+        </form>
+    </div>
+</div>
+    </main>
+
+        <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top-row">
+                                <div class="footer-brand">
+                    <h2 class="footer-big-name">Hammad Karim</h2>
+                                        <p class="footer-role">Google Ads Manager | Full-Stack Developer </p>
+
+                    <div class="contact-social-bar footer-social">
+                        <a href="https://www.linkedin.com/in/hammad-karimm" target="_blank" rel="noopener" class="social-pill" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/hammadkarimm" target="_blank" rel="noopener" class="social-pill" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/hammad._.karim/" target="_blank" rel="noopener" class="social-pill" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61579650817230" target="_blank" rel="noopener" class="social-pill" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
                 </div>
 
-                <div class="contact-wrapper">
-                    <div class="contact-form-wrapper reveal-left">
-                        <h3 class="contact-form-title"><i class="fas fa-envelope"></i> Contact</h3>
-                        <p class="contact-form-subtitle">Want to discuss something? Send me a message and let's talk.</p>
-                        
-                        <form class="contact-form" id="contactForm" action="https://formspree.io/f/mgawjnlk" method="POST">
-                            <div class="form-group">
-                                <label for="name">Your Name</label>
-                                <input type="text" id="name" name="name" placeholder="Your Name" required />
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Your Email</label>
-                                <input type="email" id="email" name="email" placeholder="Your Email" required />
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Your Message</label>
-                                <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send Message</button>
-                            <div class="form-feedback" id="formFeedback"></div>
-                        </form>
+                <div class="footer-cols-wrap">
+                    <div class="footer-col">
+                        <span class="footer-col-title">Navigation</span>
+                        <ul class="footer-links-list">
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#portfolio">Portfolio</a></li>
+                            <li><a href="#experience">Experience</a></li>
+                            <li><a href="#education">Education</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
                     </div>
 
-                    <div class="contact-info-wrapper reveal-right">
-                        <div class="contact-info-item">
-                            <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
-                            <div class="contact-info-content">
-    <h4>Email</h4>
-    <p><a href="mailto:hammadkarim07@gmail.com" style="color: inherit; text-decoration: none;">hammadkarim07@gmail.com</a></p>
-</div>
-                        </div>
-                        <div class="contact-info-item">
-                            <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
-                            <div class="contact-info-content">
-                                <h4>Location</h4>
-                                <p>Islamabad, Pakistan</p>
-                            </div>
-                        </div>
-                        <div class="contact-info-item">
-                            <div class="contact-info-icon"><i class="fas fa-briefcase"></i></div>
-                            <div class="contact-info-content">
-                                <h4>Status</h4>
-                                <p>Open to Work!</p>
-                            </div>
-                        </div>
-                        <div class="contact-social-section">
-                            <h4 class="connect-title"><i class="fas fa-link"></i> Connect With Me</h4>
-                            <div class="connect-items">
-                                <a href="https://www.linkedin.com/in/hammad-karimm" target="_blank" rel="noopener" class="connect-item">
-                                    <i class="fab fa-linkedin-in"></i>
-                                    <span>@hammad-karimm</span>
-                                </a>
-                                <a href="https://www.instagram.com/hammad._.karim/" target="_blank" rel="noopener" class="connect-item">
-                                    <i class="fab fa-instagram"></i>
-                                    <span>@hammad._.karim</span>
-                                </a>
-                                 <a href="https://www.facebook.com/profile.php?id=61579650817230" target="_blank" rel="noopener" class="connect-item">
-                                    <i class="fab fa-facebook"></i>
-                                    <span>Let's Connect on Facebook</span>
-                                </a>
-                            </div>
-                        </div>
+                    <div class="footer-col">
+                        <span class="footer-col-title">Social</span>
+                        <ul class="footer-links-list">
+                            <li><a href="https://www.linkedin.com/in/hammad-karimm" target="_blank" rel="noopener">LinkedIn</a></li>
+                            <li><a href="https://www.instagram.com/hammad._.karim/" target="_blank" rel="noopener">Instagram</a></li>
+                            <li><a href="https://www.facebook.com/profile.php?id=61579650817230" target="_blank" rel="noopener">Facebook</a></li>
+                            <li><a href="mailto:hammadkarim07@gmail.com">Email</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <span class="footer-col-title">Direct Contact</span>
+                        <ul class="footer-contact-items">
+                            <li><a href="mailto:hammadkarim07@gmail.com">hammadkarim07@gmail.com</a></li>
+                            <li><span>Islamabad, Pakistan</span></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
 
-    <!-- ===== FOOTER ===== -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <p>&copy; <span id="year"></span> Hammad Karim. All Rights Reserved.</p>
-            <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+                        <div class="footer-bottom-bar">
+                <p>&copy; <span id="year"></span> Hammad Karim. All Rights Reserved.</p>
+            </div>
         </div>
     </footer>
 <!-- ===== CERTIFICATE LIGHTBOX ===== -->
@@ -419,6 +575,10 @@
 <div class="ads-lightbox" id="adsLightbox">
     <div class="ads-lightbox-scroll" id="adsLightboxScroll"></div>
 </div>
-    <script src="script.js?v=2"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="script.js?v=3"></script>
+<script src="portrait.js?v=7"></script>
 </body>
 </html>
